@@ -1,0 +1,20 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff !important;
+}
+
+h1 {
+    outline: none !important;
+}
+.ui-bg {
+    background-image: linear-gradient(120deg, rgb(5, 3, 47), rgb(63, 0, 62), rgb(5, 3, 47)) !important;
+}
+.form {
+    max-width: 550px;
+    margin: 0 auto;
+}
+.postItemIframe {
+    aspect-ratio: 16/9;
+}

@@ -1,0 +1,14 @@
+﻿.admin-card {
+    cursor: pointer !important;
+    transition: ease 0.15s;
+}
+.admin-card:hover {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+.admin-card:active {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4) !important;
+}
+a {
+    color: black !important;
+    text-decoration: none !important;
+}

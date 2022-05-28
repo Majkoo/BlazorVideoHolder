@@ -1,0 +1,33 @@
+﻿@inject IItemFactory ItemFactory
+<RadzenDataGrid Data="@_items" TItem="Item">
+    <Columns>
+        <RadzenDataGridColumn TItem="Item" Title="Miniaturka">
+            <Template Context="data">
+                @if (data.Url.EndsWith("mp4") || data.Url.EndsWith("avi"))
+                {
+                    <video src="@data.Url" class="w-100" controls="true"></video>
+                }
+                else
+                {
+                    <RadzenImage Path="@data.Url" class="img-fluid"/>
+                }
+            </Template>
+        </RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="Item" Title="Nazwa" Property="Name"></RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="Item" Title="Opis" Property="Description"></RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="Item" Title="Typ" Property="ItemType"></RadzenDataGridColumn>
+        <RadzenDataGridColumn TItem="Item" Title="Data Dodania" Property="PostDateTime"></RadzenDataGridColumn>
+
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    private IEnumerable<Item> _items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _items = await ItemFactory.GetItems(ItemOption.Home);
+        _items = _items.OrderByDescending(i => i.PostDateTime);
+    }
+
+}

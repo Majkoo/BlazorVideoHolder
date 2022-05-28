@@ -1,0 +1,32 @@
+﻿@page "/Admin/Edit-Items"
+
+<PageTitle>Panel administracyjny - Edytuj zawartość</PageTitle>
+<div class="container my-4">
+    <h1 class="mt-4 mb-2">Edytuj Zawartość (obrazki/filmiki)</h1>
+    <RadzenBreadCrumb>
+        <RadzenBreadCrumbItem Path="/" Text="Strona główna" />
+        <RadzenBreadCrumbItem Path="/admin" Text="Admin" />
+        <RadzenBreadCrumbItem Text="Edytuj-Zawartość" />
+    </RadzenBreadCrumb>
+    <hr class="mb-3">
+
+    <RadzenTabs class="w-auto">
+        <Tabs>
+            <RadzenTabsItem class="text-center" Text="Sortuj">
+                <HomeItemList />
+            </RadzenTabsItem>
+
+            <RadzenTabsItem class="text-center" Text="Dodaj">
+                <AddHomeItem />
+            </RadzenTabsItem>
+
+            <RadzenTabsItem class="text-center" Text="Usuń">
+
+            </RadzenTabsItem>
+        </Tabs>
+    </RadzenTabs>
+</div>
+
+@code {
+
+}

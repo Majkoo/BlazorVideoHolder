@@ -1,0 +1,22 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+.logo img {
+    width: 55px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.logo span {
+    color: white;
+    font-size: clamp(18px, 3vw, 1.875rem);
+}
+

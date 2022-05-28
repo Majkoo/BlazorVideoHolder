@@ -1,0 +1,101 @@
+﻿@page "/file-upload-1"
+
+@inject IItemFactory ItemFactory
+@inject NotificationService NotificationService
+
+
+<RadzenTemplateForm Submit="OnSubmit" TItem="CreateItemDto" Data="_createItemDto" class="form">
+    <h2 class="h2">Prześlij obrazek lub filmik</h2>
+
+    <div class="mb-4">
+        <RadzenLabel Component="Name" Text="Nazwa" />
+        <RadzenTextBox style="display: block" Name="Name" @bind-Value="@_createItemDto.Name" Class="w-100"/>
+        <RadzenRequiredValidator Component="Name" Text="Nazwa jest wymagana." Style="position: absolute"/>
+    </div>
+
+     <div class="mb-4">
+        <RadzenLabel Component="Description" Text="Opis" />
+        <RadzenTextArea style="display: block" Name="Description" @bind-Value="@_createItemDto.Description" Class="w-100"/>
+        <RadzenRequiredValidator Component="Description" Text="Opis jest wymagany." Style="position: absolute"/>
+    </div>
+
+    <div class="mb-4">
+        <InputFile OnChange="@LoadFile" />
+        @if (_invalidFile)
+        {
+            <div>
+                <small class="text-danger">Nieprawidłowy format pliku.</small>
+            </div>
+        }
+        @if (_fileNotLoaded)
+        {
+            <div>
+                <small class="text-danger">Wybranie pliku jest wymagane.</small>
+            </div>
+        }
+    </div>
+
+    <div>
+        <RadzenButton Text="Prześlij" ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
+    </div>
+</RadzenTemplateForm>
+
+@code {
+    private bool _invalidFile = false;
+    private bool _fileNotLoaded = false;
+
+    CreateItemDto _createItemDto = new();
+    IBrowserFile _browserFile;
+
+    private void LoadFile(InputFileChangeEventArgs e)
+    {
+        if (e.File.ContentType.StartsWith("image") || e.File.ContentType.StartsWith("video"))
+        {
+            _invalidFile = false;
+            _fileNotLoaded = false;
+            _browserFile = e.File;
+            return;
+        }
+        _invalidFile = true;
+
+    }
+
+    async Task OnSubmit()
+    {
+        try
+        {
+            if (_browserFile is not null)
+            {
+                var item = await ItemFactory.CreateItem(_createItemDto, _browserFile, ItemOption.Home);
+                NotifySuccess(item);
+                ClearForm();
+                return;
+            }
+            _fileNotLoaded = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
+
+    private void ClearForm()
+    {
+        _createItemDto = new CreateItemDto();
+        _browserFile = null;
+    }
+
+    private void NotifySuccess(Item item)
+    {
+        NotificationService.Notify(new NotificationMessage()
+        {
+            Summary = "Sukces!",
+            Detail = $"Pomyślnie umieszczono zasób \"{item.Name}\" na stronie.",
+            Duration = 6000,
+            Style = "padding: 2.5rem 3rem; width: fit-content;",
+            Severity = NotificationSeverity.Success
+        });
+    }
+
+}
