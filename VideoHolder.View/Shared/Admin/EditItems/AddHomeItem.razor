@@ -4,38 +4,40 @@
 @inject NotificationService NotificationService
 
 
-<RadzenTemplateForm Submit="OnSubmit" TItem="CreateItemDto" Data="_createItemDto" class="form">
+<RadzenTemplateForm Submit="OnSubmit" InvalidSubmit="OnSubmit" TItem="CreateItemDto" Data="_createItemDto" class="form">
     <h2 class="h2">Prześlij obrazek lub filmik</h2>
 
     <div class="mb-4">
         <RadzenLabel Component="Name" Text="Nazwa" />
         <RadzenTextBox style="display: block" Name="Name" @bind-Value="@_createItemDto.Name" Class="w-100"/>
         <RadzenRequiredValidator Component="Name" Text="Nazwa jest wymagana." Style="position: absolute"/>
+        <RadzenLengthValidator Component="Name"  Max="128" Text="Nazwa może zawierać maksymalnie 128 znaków." Style="position: absolute" />
     </div>
 
      <div class="mb-4">
         <RadzenLabel Component="Description" Text="Opis" />
         <RadzenTextArea style="display: block" Name="Description" @bind-Value="@_createItemDto.Description" Class="w-100"/>
         <RadzenRequiredValidator Component="Description" Text="Opis jest wymagany." Style="position: absolute"/>
+        <RadzenLengthValidator Component="Description"  Max="128" Text="Opis może zawierać maksymalnie 1024 znaki." Style="position: absolute" />
     </div>
 
     <div class="mb-4">
         <InputFile OnChange="@LoadFile" />
         @if (_invalidFile)
         {
-            <div>
-                <small class="text-danger">Nieprawidłowy format pliku.</small>
+            <div class="position-absolute">
+                <small class="text-danger" style="font-size: 0.75rem;">Nieprawidłowy format pliku.</small>
             </div>
         }
         @if (_fileNotLoaded)
         {
-            <div>
-                <small class="text-danger">Wybranie pliku jest wymagane.</small>
+            <div class="position-absolute">
+                <small class="text-danger" style="font-size: 0.75rem;">Wybranie pliku jest wymagane.</small>
             </div>
         }
     </div>
 
-    <div>
+    <div class="pt-2">
         <RadzenButton Text="Prześlij" ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
     </div>
 </RadzenTemplateForm>
@@ -93,7 +95,7 @@
             Summary = "Sukces!",
             Detail = $"Pomyślnie umieszczono zasób \"{item.Name}\" na stronie.",
             Duration = 6000,
-            Style = "padding: 2.5rem 3rem; width: fit-content;",
+            Style = "padding: 2.5rem 3rem; width: fit-content; max-width: 550px;",
             Severity = NotificationSeverity.Success
         });
     }

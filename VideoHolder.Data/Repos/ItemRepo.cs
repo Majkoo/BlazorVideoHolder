@@ -20,12 +20,14 @@ public class ItemRepo : IItemRepo
     public async Task<IEnumerable<HomeItem>> GetHomeItems()
     {
         return await _ctx.HomeItems
+            .OrderByDescending(i => i.PostDateTime)
             .ToListAsync();
     }
 
     public async Task<IEnumerable<AdvItem>> GetAdvItems()
     {
         return await _ctx.AdvItems
+            .OrderByDescending(i => i.PostDateTime)
             .ToListAsync();
     }
 

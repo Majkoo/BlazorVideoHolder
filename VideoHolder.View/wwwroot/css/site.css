@@ -16,5 +16,9 @@ h1 {
     margin: 0 auto;
 }
 .postItemIframe {
-    aspect-ratio: 16/9;
+    width: 100% !important;
+    aspect-ratio: 16/11 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

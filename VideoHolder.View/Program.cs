@@ -10,18 +10,32 @@ using VideoHolder.Data.Repos.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Data services
+#region DataServices
+
 builder.Services.AddScoped<IItemRepo, ItemRepo>();
 
-// Core services
+#endregion
+
+#region CoreServices
+
 builder.Services.AddScoped<IItemFactory, ItemFactory>();
 
-// View services
+#endregion
 
-    // Radzen services
+#region ViewServices
+
+
+    #region RadzenServices
+
     builder.Services.AddScoped<NotificationService>();
+    builder.Services.AddScoped<DialogService>();
 
-// General services
+    #endregion
+
+#endregion
+
+#region GeneralServices
+
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddDbContext<HolderDbContext>(opts =>
@@ -30,6 +44,8 @@ builder.Services.AddDbContext<HolderDbContext>(opts =>
     opts.UseMySql(connString, ServerVersion.AutoDetect(connString),
         x => x.MigrationsAssembly("VideoHolder.View"));
 });
+
+#endregion
 
 var app = builder.Build();
 

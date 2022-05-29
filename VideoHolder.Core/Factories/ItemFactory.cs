@@ -19,19 +19,14 @@ public class ItemFactory: IItemFactory
         _itemRepo = itemRepo;
     }
 
-    public async Task<IEnumerable<Item>> GetItems(ItemOption itemOption)
+    public async Task<IEnumerable<HomeItem>> GetHomeItems()
     {
-        switch (itemOption)
-        {
-            case ItemOption.Home:
-                return await _itemRepo.GetHomeItems();
+        return await _itemRepo.GetHomeItems();
+    }
 
-            case ItemOption.Advs:
-                return await _itemRepo.GetAdvItems();
-
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+    public async Task<IEnumerable<AdvItem>> GetAdvItems()
+    {
+        return await _itemRepo.GetAdvItems();
     }
 
     public async Task<Item> CreateItem(CreateItemDto createItemDto, IBrowserFile browserFile, ItemOption itemOption)
