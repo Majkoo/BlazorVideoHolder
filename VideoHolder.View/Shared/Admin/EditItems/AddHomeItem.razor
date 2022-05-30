@@ -4,7 +4,7 @@
 @inject NotificationService NotificationService
 
 
-<RadzenTemplateForm Submit="OnSubmit" InvalidSubmit="OnSubmit" TItem="CreateItemDto" Data="_createItemDto" class="form">
+<RadzenTemplateForm Submit="OnSubmit" TItem="CreateItemDto" Data="_createItemDto" class="form">
     <h2 class="h2">Prześlij obrazek lub filmik</h2>
 
     <div class="mb-4">
@@ -35,22 +35,34 @@
                 <small class="text-danger" style="font-size: 0.75rem;">Wybranie pliku jest wymagane.</small>
             </div>
         }
+
     </div>
+
 
     <div class="pt-2">
         <RadzenButton Text="Prześlij" ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Secondary"></RadzenButton>
     </div>
+
+    <div class="mt-4 mb-1">
+        @if (_progressValue != 0)
+        {
+            <RadzenProgressBar Value="@_progressValue" ShowValue="false" Mode="ProgressBarMode.Indeterminate" />
+        }
+    </div>
+
 </RadzenTemplateForm>
 
 @code {
     private bool _invalidFile = false;
     private bool _fileNotLoaded = false;
+    private int _progressValue = 0;
 
     CreateItemDto _createItemDto = new();
     IBrowserFile _browserFile;
 
     private void LoadFile(InputFileChangeEventArgs e)
     {
+        _browserFile = null;
         if (e.File.ContentType.StartsWith("image") || e.File.ContentType.StartsWith("video"))
         {
             _invalidFile = false;
@@ -64,22 +76,17 @@
 
     async Task OnSubmit()
     {
-        try
+        if (_browserFile is not null)
         {
-            if (_browserFile is not null)
-            {
-                var item = await ItemFactory.CreateItem(_createItemDto, _browserFile, ItemOption.Home);
-                NotifySuccess(item);
-                ClearForm();
-                return;
-            }
-            _fileNotLoaded = true;
+            _progressValue = 100;
+            var item = await ItemFactory.CreateItem(_createItemDto, _browserFile, ItemOption.Home);
+            Thread.Sleep(625);
+            _progressValue = 0;
+            NotifySuccess(item);
+            ClearForm();
+            return;
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        _fileNotLoaded = true;
     }
 
     private void ClearForm()
@@ -95,7 +102,7 @@
             Summary = "Sukces!",
             Detail = $"Pomyślnie umieszczono zasób \"{item.Name}\" na stronie.",
             Duration = 6000,
-            Style = "padding: 2.5rem 3rem; width: fit-content; max-width: 550px;",
+            Style = "width: fit-content; max-width: 550px;",
             Severity = NotificationSeverity.Success
         });
     }

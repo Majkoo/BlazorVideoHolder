@@ -1,19 +1,30 @@
-@using VideoHolder.Data.Enums
+@using VideoHolder.View.Subject
 @inject IItemFactory ItemFactory
 @inject DialogService DialogService
+@inject NotificationService NotificationService
 
-<RadzenDataGrid Data="@_items" TItem="HomeItem" AllowSorting="true" FilterMode="FilterMode.Simple" AllowFiltering="true"
-                PageSize="5" AllowPaging="true" ShowPagingSummary="true" PagerHorizontalAlign="HorizontalAlign.Right">
+<RadzenDataGrid TItem="HomeItem" @ref="_grid"
+                Data="@_items"
+                AllowSorting="true"
+                FilterMode="FilterMode.Simple"
+                AllowFiltering="true"
+                PageSize="5" AllowPaging="true"
+                ShowPagingSummary="true"
+                PagerHorizontalAlign="HorizontalAlign.Right"
+                EditMode="DataGridEditMode.Single"
+                EmptyText="Brak zasobów do wyświetlenia."
+                RowUpdate="@OnUpdateRow">
     <Columns>
+
         <RadzenDataGridColumn TItem="HomeItem" Title="Typ" Property="ItemType" Width="80px" CssClass="text-center" Filterable="false">
             <Template Context="HomeItem data">
-                @switch(data.ItemType)
+                @switch (data.ItemType)
                 {
                     case ItemType.Picture:
-                        <RadzenIcon Icon="photo_camera" />
+                        <RadzenIcon Icon="photo_camera"/>
                         break;
                     case ItemType.Video:
-                        <RadzenIcon Icon="videocam" />
+                        <RadzenIcon Icon="videocam"/>
                         break;
                     default:
                         <span>@data.ItemType</span>
@@ -41,29 +52,52 @@
             <Template Context="data">
                 <div class="w-100 text-wrap">@data.Name</div>
             </Template>
+            <EditTemplate Context="data">
+                <div class="d-flex flex-column">
+                    <RadzenTextArea Name="Name" @bind-Value="data.Name" Rows="3" class="w-100 no-resize"></RadzenTextArea>
+                    <RadzenRequiredValidator Text="Nazwa nie może być pusta" Component="Name" Popup="false" Style="display: block; position: inherit"/>
+                    <RadzenLengthValidator Max="128" Text="Maksymalna dlugosc nazwy to 128 znaków" Component="Name" Popup="false" Style="display: block; position: inherit"/>
+                </div>
+            </EditTemplate>
         </RadzenDataGridColumn>
-        <RadzenDataGridColumn TItem="HomeItem" Title="Opis" Property="Description">
+
+        <RadzenDataGridColumn TItem="HomeItem" Title="Opis" Property="Description" MinWidth="400px">
             <Template Context="data">
                 <div class="w-100 text-wrap">@(data.Description.Length > 45 ? $"{data.Description[..45]}..." : data.Description)</div>
             </Template>
+            <EditTemplate Context="data">
+                <div class="d-flex flex-column">
+                    <RadzenTextArea Name="Description" @bind-Value="data.Description" Rows="3" class="w-100 no-resize"></RadzenTextArea>
+                    <RadzenRequiredValidator Text="Opis nie moze byc pusty" Component="Description" Popup="false" Style="display: block; position: inherit"/>
+                    <RadzenLengthValidator Max="1024" Text="Maksymalna dlugosc opisu to 1024 znaki" Component="Description" Popup="false" Style="display: block; position: inherit"/>
+                </div>
+            </EditTemplate>
         </RadzenDataGridColumn>
-        <RadzenDataGridColumn TItem="HomeItem" Title="Data Dodania" Property="PostDateTime" Width="160px" CssClass="text-center" Filterable="false"></RadzenDataGridColumn>
-        <RadzenDataGridColumn TItem="HomeItem" Title="Edytuj" TextAlign="TextAlign.Center" Width="150px">
-            <Template>
-                <RadzenButton Text="Edytuj" ButtonStyle="ButtonStyle.Warning" />
+
+        <RadzenDataGridColumn TItem="HomeItem" Title="Data Dodania" Property="PostDateTime" Width="160px" CssClass="text-center" Filterable="false"/>
+
+        <RadzenDataGridColumn TItem="HomeItem" Title="Edytuj" TextAlign="TextAlign.Center" Width="80px">
+            <Template Context="HomeItem data">
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Secondary" Size="ButtonSize.Medium" Class="m-1"
+                              Click="@(args => EditRow(data))"/>
             </Template>
+            <EditTemplate Context="data">
+                <RadzenButton Icon="save" ButtonStyle="ButtonStyle.Warning" class="mx-2" Click="@(() => SaveRow(data))"/>
+            </EditTemplate>
         </RadzenDataGridColumn>
-        <RadzenDataGridColumn TItem="HomeItem" Title="Usuń" TextAlign="TextAlign.Center" Width="150px">
-            <Template Context="data">
-            <RadzenButton Text="Usuń" ButtonStyle="ButtonStyle.Danger"
-                          Click="@(args => DialogService.Confirm($"Czy na pewno chcesz usunąć \"{data.Name}\"? // not implemented", "Usuń",  _confirmOptions))" />
+
+        <RadzenDataGridColumn TItem="HomeItem" Title="Usuń" TextAlign="TextAlign.Center" Width="80px">
+            <Template Context="HomeItem data">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.Medium"
+                              Click="@(() => OpenDeleteDialog(data))" @onclick:stopPropagation="true"/>
             </Template>
         </RadzenDataGridColumn>
 
     </Columns>
 </RadzenDataGrid>
 @code {
-    private IEnumerable<HomeItem> _items;
+    RadzenDataGrid<HomeItem> _grid;
+    private List<HomeItem> _items;
 
     private readonly ConfirmOptions _confirmOptions = new ConfirmOptions()
     {
@@ -75,6 +109,22 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _items = await ItemFactory.GetHomeItems();
+        _items = await ItemFactory.GetHomeItems() as List<HomeItem>;
     }
+
+    private void OnUpdateRow(HomeItem item)
+    {
+        ItemFactory.UpdateItem(item);
+    }
+
+    private async void EditRow(HomeItem item)
+    {
+        await _grid.EditRow(item);
+    }
+
+    private async void SaveRow(HomeItem item)
+    {
+        await _grid.UpdateRow(item);
+    }
+
 }

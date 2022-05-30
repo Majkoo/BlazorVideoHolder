@@ -10,6 +10,7 @@ public interface IItemFactory
 {
     Task<IEnumerable<HomeItem>> GetHomeItems();
     Task<IEnumerable<AdvItem>> GetAdvItems();
+    Task<Item> UpdateItem(Item item);
     Task<Item> CreateItem(CreateItemDto createItemDto, IBrowserFile browserFile, ItemOption itemOption);
-    Task<bool> DeleteItem();
+    Task<bool> DeleteItem(Item item);
 }

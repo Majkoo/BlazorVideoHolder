@@ -31,25 +31,47 @@ public class ItemFactory: IItemFactory
 
     public async Task<Item> CreateItem(CreateItemDto createItemDto, IBrowserFile browserFile, ItemOption itemOption)
     {
-        try
+        return itemOption switch
         {
-            return itemOption switch
-            {
-                ItemOption.Home => await PostHomeItem(createItemDto, browserFile),
-                ItemOption.Advs => await PostAdvItem(createItemDto, browserFile),
-                _ => throw new ArgumentOutOfRangeException()
-            };
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex);
-            throw new Exception(ex.Message);
-        }
+            ItemOption.Home => await PostHomeItem(createItemDto, browserFile),
+            ItemOption.Advs => await PostAdvItem(createItemDto, browserFile),
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 
-    public async Task<bool> DeleteItem()
+    public async Task<Item> UpdateItem(Item item)
     {
-        throw new NotImplementedException();
+        if (typeof(HomeItem) == item.GetType())
+        {
+            return await _itemRepo.UpdateHomeItem(item as HomeItem);
+        }
+        if (typeof(AdvItem) == item.GetType())
+        {
+            return await _itemRepo.UpdateAdvItem(item as AdvItem);
+        }
+        throw new ArgumentOutOfRangeException();
+    }
+
+    public async Task<bool> DeleteItem(Item item)
+    {
+        try
+        {
+            if (item.GetType() == typeof(HomeItem))
+            {
+                await _itemRepo.DeleteHomeItem(item as HomeItem);
+            }
+            else if (item.GetType() == typeof(AdvItem))
+            {
+                await _itemRepo.DeleteAdvItem(item as AdvItem);
+            }
+            var delPath = Path.Combine("wwwroot", item.Url);
+            File.Delete(delPath);
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
     }
 
     #region private methods

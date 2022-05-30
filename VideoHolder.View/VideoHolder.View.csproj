@@ -31,4 +31,10 @@
       <Folder Include="wwwroot\items\home" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Shared\Admin\EditItems\EditHomeItem.razor.cs">
+        <DependentUpon>EditHomeItem.razor</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

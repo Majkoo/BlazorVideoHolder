@@ -1,0 +1,45 @@
+@using VideoHolder.View.Subject
+@inject DialogService DialogService
+@inject IItemFactory ItemFactory
+@inject NotificationService NotificationService
+
+<div class="w-100 d-flex justify-content-center align-items-start flex-column">
+    <div class="h3">Czy na pewno chcesz usunąć zasób o nazwie</div>
+    <div class="h4"><b>"@Item.Name"</b>?</div>
+
+    <div class="d-flex w-100 justify-content-between mt-3">
+        <RadzenButton Text="Anuluj" Click="@(Close)" ButtonStyle="ButtonStyle.Danger" />
+        <RadzenButton Text="Tak" Click="@(() => Confirm(Item))" ButtonStyle="ButtonStyle.Secondary" />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public HomeItem Item { get; set; } = new();
+
+
+    private void Close()
+    {
+        DialogService.Close();
+    }
+
+    private async void Confirm(Item item)
+    {
+        if (await ItemFactory.DeleteItem(item))
+        {
+            DeletedItemSubject.Next(item);
+            NotificationService.Notify(new NotificationMessage()
+            {
+                Summary = "Sukces",
+                Detail = "Pomyślnie usunięto zasób",
+                Duration = 5000,
+                Severity = NotificationSeverity.Warning,
+            });
+
+            DialogService.Close();
+            return;
+        };
+        NotificationService.Notify(DictionaryService.NotificationMessages["SomethingWentWrong"]);
+    }
+
+}

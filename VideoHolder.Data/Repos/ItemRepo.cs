@@ -54,6 +54,24 @@ public class ItemRepo : IItemRepo
 
     #endregion
 
+    #region UpdateItemsMethods
+
+    public async Task<HomeItem> UpdateHomeItem(HomeItem item)
+    {
+        _ctx.HomeItems.Update(item);
+        await _ctx.SaveChangesAsync();
+        return item;
+    }
+
+    public async Task<AdvItem> UpdateAdvItem(AdvItem item)
+    {
+        _ctx.AdvItems.Update(item);
+        await _ctx.SaveChangesAsync();
+        return item;
+    }
+
+    #endregion
+
     #region DeleteItemsMethods
 
     public async Task<bool> DeleteHomeItem(HomeItem item)

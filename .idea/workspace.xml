@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="278cb86f-1ec3-4bff-bce3-27ae654a435e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VideoHolder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VideoHolder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/Factories/Interfaces/IItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Core/Factories/Interfaces/IItemFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/Factories/ItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Core/Factories/ItemFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/Repos/Interfaces/IItemRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Data/Repos/Interfaces/IItemRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/Repos/ItemRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Data/Repos/ItemRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/AddHomeItem.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/AddHomeItem.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/EditHomeItem.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/EditHomeItem.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/HomeItemList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/HomeItemList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/VideoHolder.View.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/VideoHolder.View.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/site.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="29u13DrSsh7jeIbeONY4HkXanRo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="278cb86f-1ec3-4bff-bce3-27ae654a435e" name="Changes" comment="" />
+      <created>1653947960209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653947960209</updated>
+      <workItem from="1653947964239" duration="8000" />
+      <workItem from="1653950412568" duration="11000" />
+      <workItem from="1653951401250" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

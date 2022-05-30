@@ -1,10 +1,12 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 html, body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
     background-color: #ffffff !important;
 }
-
+.page-title {
+    font-family: 'Calibri', sans-serif !important;
+}
 h1 {
     outline: none !important;
 }
@@ -21,4 +23,34 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.container {
+    max-width: 1350px !important;
+}
+.item {
+    background-color: #f8f8f8 !important;
+}
+.item-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item-header-container {
+    overflow: auto;
+}
+.item-header-container h5 {
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+.desc-container {
+    height: 120px;
+    overflow: auto;
+}
+video {
+    aspect-ratio: 16/9 !important;
+}
+.no-resize {
+    resize: none;
 }
