@@ -1,5 +1,4 @@
-﻿
-namespace VideoHolder.Core.Dtos;
+﻿namespace VideoHolder.Shared.Dtos;
 
 public class CreateItemDto
 {

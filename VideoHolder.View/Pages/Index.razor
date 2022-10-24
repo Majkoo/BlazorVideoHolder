@@ -8,31 +8,7 @@
         @foreach (var item in Items)
         {
             <div class="col-12 col-sm-6 col-lg-4 p-2 mb-2">
-                <RadzenCard class="p-0 item">
-                    <div class="item-header-container border-bottom  text-center p-2 m-0">
-                        <h5 class="m-0 p-0 h3 text-nowrap">@item.Name</h5>
-                    </div>
-                    @switch (item.ItemType)
-                    {
-                        case ItemType.Picture:
-                        {
-                            <div class="item-container">
-                                <img src="@item.Url" alt="@item.Name" class=""/>
-                            </div>
-                            break;
-                        }
-                        case ItemType.Video:
-                        {
-                            <div class="item-container">
-                                <video src="@item.Url" alt="@item.Name" controls class="img-fluid w-100"></video>
-                            </div>
-                            break;
-                        }
-                    }
-                    <div class="px-3 py-2 border-top desc-container">
-                        @item.Description
-                    </div>
-                </RadzenCard>
+                <HomeItemCard Item="item"/>
             </div>
         }
     </div>

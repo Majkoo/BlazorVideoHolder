@@ -1,50 +1,26 @@
-﻿@page "/Admin"
+﻿@page "/admin"
+
+@inject NavigationManager NavigationManager
+
 <PageTitle>Panel administracyjny</PageTitle>
 
-<div class="container my-4">
-    <h1 class="mt-4 mb-2">Panel administracyjny</h1>
-    <RadzenBreadCrumb>
-        <RadzenBreadCrumbItem Path="/" Text="Strona główna" />
-        <RadzenBreadCrumbItem Text="Admin" />
-    </RadzenBreadCrumb>
-    <hr class="mb-3">
 
-    <div class="row g-2">
-        <div class="col-12 col-md-6 p-2 m-0">
-            <div class="admin-card rounded">
-                <a href="/admin/edit-items">
-                    <RadzenCard>
-                        <div class="text-center">
-                            <h3 class="h2 m-0">Obrazki/Filmiki</h3>
-                            <p>(strona główna)</p>
-                        </div>
-                        <div class="d-flex">
-                            <RadzenImage Path="/pictures.jpg" class="img-fluid"/>
-                        </div>
-                    </RadzenCard>
-                </a>
-            </div>
+<AuthorizeView>
+    <Authorized>
+        <AdminPanel/>
+    </Authorized>
+    <NotAuthorized>
+        <div class="text-center my-4">
+            <h3>Nie zautoryzowano</h3>
+            <p>Zaloguj/zarejestruj się jako admin <a href="/auth" class="text-black-50"><b><u>tutaj</u></b></a>.</p>
         </div>
-        <div class="col-12 col-md-6 p-2 m-0">
-            <div class="admin-card rounded">
-                <a href="/admin/edit-sponsor-info">
-                    <RadzenCard>
-                        <div class="text-center">
-                            <h3 class="h2 m-0">Sponsorzy/Współpraca</h3>
-                            <p>(podstrona współprace)</p>
-                        </div>
-                        <div class="d-flex">
-                            <RadzenImage Path="/advs.jpg" class="img-fluid"/>
-                        </div>
-                    </RadzenCard>
-                </a>
-            </div>
-        </div>
-    </div>
+    </NotAuthorized>
+</AuthorizeView>
 
-</div>
 
 @code
 {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; }
 
 }

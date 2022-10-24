@@ -1,0 +1,21 @@
+@inject IAccountRepo AccountRepo
+
+
+@if (Login)
+{
+    <LoginPanel />
+}
+else
+{
+    <RegisterPanel />
+}
+
+@code {
+    private bool Login { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Login = await AccountRepo.IsAnyAccountPresent();
+    }
+
+}

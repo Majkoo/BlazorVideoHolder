@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoHolder.Data", "VideoHo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoHolder.Core", "VideoHolder.Core\VideoHolder.Core.csproj", "{1DC06AF9-4137-46CB-A012-217E2870A386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoHolder.Shared", "VideoHolder.Shared\VideoHolder.Shared.csproj", "{ACAED6F1-EED7-461D-8D8B-8126EBA6923D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1DC06AF9-4137-46CB-A012-217E2870A386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC06AF9-4137-46CB-A012-217E2870A386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC06AF9-4137-46CB-A012-217E2870A386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAED6F1-EED7-461D-8D8B-8126EBA6923D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAED6F1-EED7-461D-8D8B-8126EBA6923D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAED6F1-EED7-461D-8D8B-8126EBA6923D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAED6F1-EED7-461D-8D8B-8126EBA6923D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

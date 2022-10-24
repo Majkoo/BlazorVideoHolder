@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace VideoHolder.View.Migrations
+namespace VideoHolder.Data.Migrations
 {
     public partial class initial : Migration
     {

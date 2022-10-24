@@ -1,0 +1,103 @@
+@page "/auth/login"
+
+@inject IAccountRepo AccountRepo
+@inject IAuthHelper AuthHelper
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NotificationService NotificationService
+
+<PageTitle>Panel administracyjny - Logowanie</PageTitle>
+
+<div class="w-100 text-left d-flex justify-content-center align-items-center my-4">
+
+    <RadzenTemplateForm
+        TItem="LoginDto"
+        Data="@_loginAccountDto"
+        Style="width: 100%; max-width: 450px"
+        Submit="() => OnSubmit(_loginAccountDto)">
+
+        <RadzenFieldset>
+
+            <h2 class="text-center mt-2 mb-4">
+                <strong>Logowanie</strong>
+            </h2>
+
+            <div class="mb-4">
+
+                <RadzenLabel Text="Login"/>
+
+                <RadzenTextBox
+                    Placeholder="Wprowadź login..."
+                    Name="Login"
+                    Style="display: block"
+                    @bind-Value="@_loginAccountDto.Login"/>
+
+                <RadzenRequiredValidator
+                    Component="Login"
+                    Text="Login jesty wymagany"
+                    Popup="@true"
+                    Style="position: absolute"/>
+
+            </div>
+
+            <div class="mb-4">
+
+                <RadzenLabel Text="Hasło"/>
+
+                <RadzenPassword
+                    Placeholder="Wprowadź hasło..."
+                    Name="Password"
+                    Style="display: block"
+                    @bind-Value="@_loginAccountDto.Password"/>
+
+                <RadzenRequiredValidator
+                    Component="Password"
+                    Text="Hasło jest wymagane"
+                    Popup="@true" Style="position: absolute"/>
+
+            </div>
+
+            <div class="w-100 text-end">
+                <RadzenButton ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Primary" Text="Submit"></RadzenButton>
+            </div>
+
+        </RadzenFieldset>
+
+    </RadzenTemplateForm>
+
+</div>
+
+@code {
+
+    private readonly LoginDto _loginAccountDto = new LoginDto();
+
+    private async Task OnSubmit(LoginDto loginDto)
+    {
+        var account = await AuthHelper.GetAccountByLogin(loginDto.Login);
+        if (account is null)
+        {
+            NotificationService.Notify(new ErrorNotification("Auth failed", "Invalid login credentials"));
+            return;
+        }
+
+        var signInResult = await AuthHelper.Login(loginDto);
+
+
+        if (signInResult)
+        {
+            await ((CustomAuthStateProvider)AuthenticationStateProvider).MarkUserAsSignedIn(account);
+            NavigationManager.NavigateTo("/admin", false);
+            NotificationService.Notify(new SuccessNotification("Auth succeed", "Signed in successfully."));
+        }
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!await AccountRepo.IsAnyAccountPresent())
+        {
+            NavigationManager.NavigateTo("/auth");
+        }
+
+    }
+}

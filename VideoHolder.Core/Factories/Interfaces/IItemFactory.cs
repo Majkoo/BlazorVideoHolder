@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
-using VideoHolder.Core.Dtos;
-using VideoHolder.Core.Enums;
 using VideoHolder.Data.Entities;
 using VideoHolder.Data.Entities.Abstract;
+using VideoHolder.Shared.Dtos;
+using VideoHolder.Shared.Enums;
 
 namespace VideoHolder.Core.Factories.Interfaces;
 

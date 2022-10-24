@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
-using VideoHolder.Core.Dtos;
-using VideoHolder.Core.Enums;
 using VideoHolder.Core.Factories.Interfaces;
 using VideoHolder.Data.Entities;
 using VideoHolder.Data.Entities.Abstract;
-using VideoHolder.Data.Enums;
 using VideoHolder.Data.Repos.Interfaces;
+using VideoHolder.Shared.Dtos;
+using VideoHolder.Shared.Enums;
 
 namespace VideoHolder.Core.Factories;
 
@@ -14,7 +13,8 @@ public class ItemFactory: IItemFactory
     private readonly IItemRepo _itemRepo;
 
     public ItemFactory(
-        IItemRepo itemRepo)
+        IItemRepo itemRepo
+        )
     {
         _itemRepo = itemRepo;
     }
@@ -31,6 +31,7 @@ public class ItemFactory: IItemFactory
 
     public async Task<Item> CreateItem(CreateItemDto createItemDto, IBrowserFile browserFile, ItemOption itemOption)
     {
+        CheckPaths();
         return itemOption switch
         {
             ItemOption.Home => await PostHomeItem(createItemDto, browserFile),
@@ -41,6 +42,7 @@ public class ItemFactory: IItemFactory
 
     public async Task<Item> UpdateItem(Item item)
     {
+        CheckPaths();
         if (typeof(HomeItem) == item.GetType())
         {
             return await _itemRepo.UpdateHomeItem(item as HomeItem);
@@ -54,6 +56,7 @@ public class ItemFactory: IItemFactory
 
     public async Task<bool> DeleteItem(Item item)
     {
+        CheckPaths();
         try
         {
             if (item.GetType() == typeof(HomeItem))
@@ -121,6 +124,17 @@ public class ItemFactory: IItemFactory
 
         await _itemRepo.SaveChanges();
         return advItem;
+    }
+
+    private static void CheckPaths()
+    {
+        var itemsPath = Path.Combine("wwwroot", "items");
+        var advPath = Path.Combine(itemsPath, "adv");
+        var homePath = Path.Combine(itemsPath, "home");
+
+        if (!Directory.Exists(itemsPath)) Directory.CreateDirectory(itemsPath);
+        if (!Directory.Exists(advPath)) Directory.CreateDirectory(advPath);
+        if (!Directory.Exists(homePath)) Directory.CreateDirectory(homePath);
     }
 
     #endregion

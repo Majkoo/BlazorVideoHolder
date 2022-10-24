@@ -2,17 +2,19 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VideoHolder.Data;
 
 #nullable disable
 
-namespace VideoHolder.View.Migrations
+namespace VideoHolder.Data.Migrations
 {
     [DbContext(typeof(HolderDbContext))]
-    partial class HolderDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221024182120_account-id-changed-to-guid")]
+    partial class accountidchangedtoguid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,9 +23,9 @@ namespace VideoHolder.View.Migrations
 
             modelBuilder.Entity("VideoHolder.Data.Entities.Account", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Login")
                         .IsRequired()

@@ -5,7 +5,7 @@ namespace VideoHolder.Data.Entities;
 public class Account
 {
     [Key]
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Required]
     [MaxLength(64)]

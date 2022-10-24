@@ -6,20 +6,30 @@
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.AspNetCore.Components.Web.Virtualization
 @using Microsoft.JSInterop
+
+@using Microsoft.AspNetCore.Hosting
+
+@using Radzen
+@using Radzen.Blazor
+@using Radzen.Blazor.Rendering
+
 @using VideoHolder.View
 @using VideoHolder.View.Services
 @using VideoHolder.View.Shared
 @using VideoHolder.View.Shared.Admin
 @using VideoHolder.View.Shared.Admin.EditItems
-@using Microsoft.AspNetCore.Hosting
-@using Radzen
-@using Radzen.Blazor
-@using Radzen.Blazor.Rendering
+@using VideoHolder.View.Auth
+@using VideoHolder.View.Auth.Interfaces
+
+@using VideoHolder.Shared.Enums
+@using VideoHolder.Shared.Dtos
+@using VideoHolder.Shared.Notifications
+
 @using VideoHolder.Core.Factories.Interfaces
 @using VideoHolder.Core.Factories
-@using VideoHolder.Core.Dtos
-@using VideoHolder.Core.Enums
-@using VideoHolder.Data.Enums
+
 @using VideoHolder.Data.Entities
 @using VideoHolder.Data.Entities.Abstract
+@using VideoHolder.Data.Repos.Interfaces
+
 @using Path = System.IO.Path

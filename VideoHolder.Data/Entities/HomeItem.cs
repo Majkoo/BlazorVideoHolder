@@ -1,5 +1,5 @@
 ﻿using VideoHolder.Data.Entities.Abstract;
-using VideoHolder.Data.Enums;
+using VideoHolder.Shared.Enums;
 
 namespace VideoHolder.Data.Entities;
 

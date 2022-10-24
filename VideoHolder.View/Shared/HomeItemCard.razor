@@ -1,0 +1,31 @@
+﻿<RadzenCard class="p-0 Item">
+    <div class="Item-header-container border-bottom  text-center p-2 m-0">
+        <h5 class="m-0 p-0 h3 text-nowrap">@Item.Name</h5>
+    </div>
+    @switch (Item.ItemType)
+    {
+        case ItemType.Picture:
+        {
+            <div class="Item-container">
+                <img src="@Item.Url" alt="@Item.Name" class="img-fluid"/>
+            </div>
+            break;
+        }
+        case ItemType.Video:
+        {
+            <div class="Item-container">
+                <video src="@Item.Url" alt="@Item.Name" controls class="img-fluid w-100"></video>
+            </div>
+            break;
+        }
+    }
+    <div class="px-3 py-2 border-top desc-container">
+        @Item.Description
+    </div>
+</RadzenCard>
+
+@code {
+    [Parameter]
+    public HomeItem Item { get; set; }
+
+}

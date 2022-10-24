@@ -1,4 +1,4 @@
-﻿namespace VideoHolder.Core.Enums;
+﻿namespace VideoHolder.Shared.Enums;
 
 public enum ItemOption
 {

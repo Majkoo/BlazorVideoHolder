@@ -1,15 +1,21 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
-        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
-    </Found>
-    <NotFound>
-        <PageTitle>Nie znaleziono zasobu (404)</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert" class="text-center mt-5 h1">Nie znaleziono zasobu (404)</p>
-            <p class="h3 text-center">Przepraszamy.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+﻿<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+            <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+        </Found>
+
+        <NotFound>
+            <PageTitle>Nie znaleziono strony (404)</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert" class="text-center mt-5 h1">Nie znaleziono strony (404)</p>
+                <p class="h3 text-center">Przepraszamy.</p>
+            </LayoutView>
+        </NotFound>
+
+    </Router>
+</CascadingAuthenticationState>
+
 <RadzenNotification/>
 <RadzenDialog />

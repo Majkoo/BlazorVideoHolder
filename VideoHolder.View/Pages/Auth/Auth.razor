@@ -1,0 +1,23 @@
+@page "/auth"
+
+@inject IAccountRepo AccountRepo
+@inject NavigationManager NavigationManager
+
+@code {
+    [CascadingParameter]
+    public Task<AuthenticationState> AuthState { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (await AccountRepo.IsAnyAccountPresent())
+        {
+            NavigationManager.NavigateTo("/auth/login", false);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/auth/register", false);
+        }
+
+    }
+
+}

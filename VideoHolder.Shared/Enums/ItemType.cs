@@ -1,4 +1,4 @@
-﻿namespace VideoHolder.Data.Enums;
+﻿namespace VideoHolder.Shared.Enums;
 
 public enum ItemType
 {

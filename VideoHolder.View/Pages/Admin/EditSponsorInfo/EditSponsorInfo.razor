@@ -1,8 +1,10 @@
 ﻿@page "/admin/edit-sponsor-info"
-@using VideoHolder.Core.Enums
-<PageTitle>Panel administracyjny - Edytuj informacje o sponsorach</PageTitle>
+
+@attribute [Authorize]
+
+<PageTitle>Panel administracyjny - Edytuj informacje o współpracach</PageTitle>
 <div class="container my-4">
-    <h1 class="mt-4 mb-2">Edytuj Informacje O Sponsorach</h1>
+    <h1 class="mt-4 mb-2">Edytuj informacje o współpracach</h1>
     <RadzenBreadCrumb>
         <RadzenBreadCrumbItem Path="/" Text="Strona główna" />
         <RadzenBreadCrumbItem Path="/admin" Text="Admin" />
@@ -13,5 +15,6 @@
 </div>
 
 @code {
-
+    [CascadingParameter]
+    private Task<AuthenticationState>? AuthState { get; set; }
 }

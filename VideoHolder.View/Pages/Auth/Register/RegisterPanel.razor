@@ -1,0 +1,117 @@
+@page "/auth/register";
+
+@inject IAccountRepo AccountRepo
+@inject IAuthHelper AuthHelper
+@inject NavigationManager NavigationManager
+@inject NotificationService NotificationService
+
+<PageTitle>Panel administracyjny - Rejestracja</PageTitle>
+
+<div class="w-100 text-left d-flex justify-content-center align-items-center my-4">
+
+    <RadzenTemplateForm
+        TItem="RegisterDto"
+        Data="@_registerAccountDto"
+        Style="width: 100%; max-width: 450px"
+        Submit="() => OnSubmit(_registerAccountDto)">
+
+        <RadzenFieldset>
+
+            <h2 class="text-center mt-2 mb-4">
+                <strong>Rejestracja</strong>
+            </h2>
+
+            <div class="mb-4">
+
+                <RadzenLabel Text="Login"/>
+
+                <RadzenTextBox
+                    Placeholder="Wprowadź login..."
+                    Name="Login"
+                    Style="display: block"
+                    @bind-Value="@_registerAccountDto.Login"/>
+
+                <RadzenRequiredValidator
+                    Component="Login"
+                    Text="Login jest wymagany"
+                    Popup="@true"
+                    Style="position: absolute"/>
+
+            </div>
+
+            <div class="mb-4">
+
+                <RadzenLabel Text="Hasło"/>
+
+                <RadzenPassword
+                    Placeholder="Wprowadź hasło..."
+                    Name="Password"
+                    Style="display: block"
+                    @bind-Value="@_registerAccountDto.Password"/>
+
+                <RadzenRequiredValidator
+                    Component="Password"
+                    Text="Hasło jest wymagane"
+                    Popup="@true" Style="position: absolute"/>
+
+            </div>
+
+            <div class="mb-4">
+
+                <RadzenLabel Text="Powtórzenie hasła"/>
+
+                <RadzenPassword
+                    Placeholder="Powtórz hasło..."
+                    Name="RepeatPassword"
+                    Style="display: block"
+                    @bind-Value="@_registerAccountDto.RepeatPassword"/>
+
+                <RadzenCompareValidator
+                    Visible="@(!string.IsNullOrEmpty(_registerAccountDto.RepeatPassword))"
+                    Value="@_registerAccountDto.RepeatPassword"
+                    Component="RepeatPassword"
+                    Text="Hasła nie są takie same"
+                    Popup="@true"
+                    Style="position: absolute"/>
+
+            </div>
+
+            <div class="w-100 text-end">
+                <RadzenButton ButtonType="ButtonType.Submit" ButtonStyle="ButtonStyle.Primary" Text="Submit"></RadzenButton>
+            </div>
+
+        </RadzenFieldset>
+
+    </RadzenTemplateForm>
+
+</div>
+
+@code {
+
+    private readonly RegisterDto _registerAccountDto = new RegisterDto();
+
+    private async Task OnSubmit(RegisterDto registerDto)
+    {
+        var result = await AuthHelper.Register(registerDto);
+        if (result)
+        {
+            NavigationManager.NavigateTo("/auth", false);
+            NotificationService.Notify(new SuccessNotification("Powodzenie", "Pomyślnie stworzono konto."));
+        }
+        else
+        {
+            NotificationService.Notify(new ErrorNotification("Niepowodzenie", "Skontaktuj się z twórcą strony."));
+        }
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (await AccountRepo.IsAnyAccountPresent())
+        {
+            NavigationManager.NavigateTo("/auth");
+        }
+
+    }
+
+}

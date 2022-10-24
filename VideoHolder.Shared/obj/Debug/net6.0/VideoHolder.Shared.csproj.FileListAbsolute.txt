@@ -1,0 +1,12 @@
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\bin\Debug\net6.0\VideoHolder.Shared.deps.json
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\bin\Debug\net6.0\VideoHolder.Shared.dll
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\bin\Debug\net6.0\VideoHolder.Shared.pdb
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.csproj.AssemblyReference.cache
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.AssemblyInfoInputs.cache
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.AssemblyInfo.cs
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.csproj.CoreCompileInputs.cache
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.dll
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\refint\VideoHolder.Shared.dll
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\VideoHolder.Shared.pdb
+C:\Users\mrgra\Documents\GitHub\BlazorVideoHolder\VideoHolder.Shared\obj\Debug\net6.0\ref\VideoHolder.Shared.dll

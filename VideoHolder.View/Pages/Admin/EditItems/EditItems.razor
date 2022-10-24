@@ -1,8 +1,10 @@
-﻿@page "/Admin/Edit-Items"
+﻿@page "/admin/edit-items"
+
+@attribute [Authorize]
 
 <PageTitle>Panel administracyjny - Edytuj zawartość</PageTitle>
 <div class="container my-4">
-    <h1 class="mt-4 mb-2">Edytuj Zawartość (obrazki/filmiki)</h1>
+    <h1 class="mt-4 mb-2">Edytuj zawartość (obrazki/filmiki)</h1>
     <RadzenBreadCrumb>
         <RadzenBreadCrumbItem Path="/" Text="Strona główna" />
         <RadzenBreadCrumbItem Path="/admin" Text="Admin" />
@@ -25,5 +27,6 @@
 </div>
 
 @code {
-
+    [CascadingParameter]
+    private Task<AuthenticationState>? AuthState { get; set; }
 }

@@ -11,119 +11,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ddff7cb-c532-4b66-8f02-6235a0d9e10c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/Dtos/CreateItemDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/Enums/ItemOption.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/Factories/Interfaces/IItemFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/Factories/ItemFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/VideoHolder.Core.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/bin/Debug/net6.0/VideoHolder.Core.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/bin/Debug/net6.0/VideoHolder.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/bin/Debug/net6.0/VideoHolder.Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/bin/Debug/net6.0/VideoHolder.Data.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/bin/Debug/net6.0/VideoHolder.Data.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/bin/Debug/net6.0/ref/VideoHolder.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/VideoHolder.Core.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/Debug/net6.0/ref/VideoHolder.Core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/VideoHolder.Core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/VideoHolder.Core.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/VideoHolder.Core.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Core/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Entities/Abstract/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Entities/Account.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Entities/AdvItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Entities/HomeItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Enums/ItemType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/HolderDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Repos/AccountRepo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Repos/Interfaces/IItemRepo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/Repos/ItemRepo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/VideoHolder.Data.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/bin/Debug/net6.0/VideoHolder.Data.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/bin/Debug/net6.0/VideoHolder.Data.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/bin/Debug/net6.0/VideoHolder.Data.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/bin/Debug/net6.0/ref/VideoHolder.Data.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/VideoHolder.Data.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/Debug/net6.0/ref/VideoHolder.Data.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/VideoHolder.Data.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/VideoHolder.Data.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/VideoHolder.Data.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.Data/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/App.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Migrations/20220527170103_initial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Migrations/20220527170103_initial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Migrations/HolderDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/Admin.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/Admin.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/EditItems/EditItems.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/EditSponsorInfo/EditSponsorInfo.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Error.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Index.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/_Host.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/_Layout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/AddHomeItem.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/HomeItemList.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/EditItems/__.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Admin/___.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Footer.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/Footer.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/ItemCard.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/MainLayout.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/MainLayout.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/NavMenu.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/NavMenu.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/SearchBar.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/VideoHolder.View.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/_Imports.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/advs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/bootstrap/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/bootstrap/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/FONT-LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/ICON-LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/pictures.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.View/wwwroot/title-icon.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VideoHolder.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Auth/Auth.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VideoHolder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VideoHolder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/Dtos/CreateItemDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/Enums/ItemOption.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/Factories/Interfaces/IItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Core/Factories/Interfaces/IItemFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/Factories/ItemFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Core/Factories/ItemFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Core/VideoHolder.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Core/VideoHolder.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/Entities/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Data/Entities/Account.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/Entities/HomeItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Data/Entities/HomeItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/Enums/ItemType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/Repos/AccountRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Data/Repos/AccountRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.Data/VideoHolder.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.Data/VideoHolder.Data.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/App.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Migrations/20220527170103_initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Migrations/20220527170103_initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Migrations/HolderDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/Admin.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/Admin.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/EditItems/EditItems.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/EditItems/EditItems.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/EditSponsorInfo/EditSponsorInfo.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Admin/EditSponsorInfo/EditSponsorInfo.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Shared/ItemCard.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/VideoHolder.View.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/VideoHolder.View.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.View/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.View/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VideoHolder.sln" beforeDir="false" afterPath="$PROJECT_DIR$/VideoHolder.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +52,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9a8ab895a2f74942b1825645e99752064763ce333e2f12bea5b2fd51de95b/IBrowserFile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b97b55ba9c75e7c55eb27ae46d6b3f49841414c5142a69449193f7e65153/AuthenticationStateProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VideoHolder.View/Auth/AuthContextProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/VideoHolder.View/Auth/CustomAuthStateProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/VideoHolder.View/wwwroot/css/bootstrap/bootstrap.min.css.map" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -154,22 +69,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "NewWatcherDialog.advanced.open": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.VideoHolder.View">
     <configuration name="VideoHolder" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/VideoHolder/VideoHolder.csproj" />
@@ -265,6 +180,8 @@
       <workItem from="1653936206962" duration="6968000" />
       <workItem from="1653945687639" duration="226000" />
       <workItem from="1653948001247" duration="6141000" />
+      <workItem from="1666622666855" duration="8532000" />
+      <workItem from="1666631277541" duration="5041000" />
     </task>
     <servers />
   </component>
